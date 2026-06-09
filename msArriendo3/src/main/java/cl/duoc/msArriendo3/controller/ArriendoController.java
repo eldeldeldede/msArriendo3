@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import cl.duoc.msArriendo3.dto.ArriendoDTO;
 import cl.duoc.msArriendo3.model.Arriendo;
 import cl.duoc.msArriendo3.service.ArriendoService;
+import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
 @RequestMapping("api/v1/arriendo")
@@ -25,6 +26,10 @@ public class ArriendoController {
     private ArriendoService arriendoService;
 
     @GetMapping
+    @Operation(
+        summary = "Obtener la lista de arriendos registrados",
+        description = "Retorna la lista de arriendos registrados en el sistema del Rent a Car."
+    )
     public ResponseEntity<List<Arriendo>> listar(){
         try {
             List<Arriendo> arriendos = arriendoService.ListarArriendo();
@@ -35,6 +40,10 @@ public class ArriendoController {
     }
 
     @PostMapping
+    @Operation(
+        summary = "Registrar un nuevo arriendo",
+        description = "Permite registrar un nuevo arriendo en el sistema del Rent a Car."
+    )
     public ResponseEntity<Arriendo> guardarArriendo(Arriendo arriendo){
         try {
             Arriendo nuevoArriendo = arriendoService.guardarArriendo(arriendo);
@@ -45,6 +54,10 @@ public class ArriendoController {
     }
 
     @GetMapping("/id/{id}")
+    @Operation(
+        summary = "Buscar arriendo por ID",
+        description = "Retorna los detalles de un arriendo específico por su ID."
+    )
     public ResponseEntity<Arriendo> buscarArriendo(@PathVariable Integer id){
         try {
             Arriendo arriendo = arriendoService.buscarPorId(id);
@@ -55,6 +68,10 @@ public class ArriendoController {
     }
 
     @PutMapping("/{id}")
+    @Operation(
+        summary = "Actualizar arriendo por ID",
+        description = "Permite actualizar los detalles de un arriendo específico por su ID."
+    )
     public ResponseEntity<Arriendo> actualizarArriendo(@PathVariable Integer id, @RequestBody Arriendo arriendoActualizado){
         try {
             Arriendo arriendoActualizado1 = arriendoService.actualizarArriendo(id, arriendoActualizado);
@@ -65,7 +82,11 @@ public class ArriendoController {
     }
 
     @DeleteMapping("/id/{id}")
-    public ResponseEntity<Void> eliminarArriendo(Integer id){
+    @Operation(
+        summary = "Eliminar arriendo por ID",
+        description = "Permite eliminar un arriendo específico por su ID."
+    )
+    public ResponseEntity<Void> eliminarArriendo(@PathVariable Integer id){
         try {
             arriendoService.eliminarArriendo(id);
             return ResponseEntity.ok().build();
@@ -75,7 +96,10 @@ public class ArriendoController {
     }
 
     @GetMapping("/dto/{id}")
-
+    @Operation(
+        summary = "Buscar arriendo por ID (DTO)",
+        description = "Retorna los detalles de un arriendo específico por su ID en formato DTO."
+    )
     public ResponseEntity<ArriendoDTO> detalleArriendoDTO(@PathVariable Integer id) {
         try {
             ArriendoDTO arriendoDTO = arriendoService.obtenerArriendoDTO(id);

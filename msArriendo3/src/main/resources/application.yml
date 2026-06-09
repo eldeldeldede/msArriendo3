@@ -1,0 +1,26 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: msArriendo3
+  datasource:
+    url: jdbc:mysql://localhost:3306/arriendo_db
+    username: root
+    password: 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761
+
+springdoc:
+  api-docs:
+    enabled: true
+    version: openapi_3_0
+  swagger-ui:
+    enabled: true

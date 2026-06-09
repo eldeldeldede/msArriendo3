@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import cl.duoc.msArriendo3.dto.ReservaDTO;
 
-@FeignClient(name = "msReserva", url = "http://localhost:8084")
+@FeignClient(name = "msReserva")
 public interface ReservaClient {
 
     @GetMapping("/api/v1/reservas/dto/{id}")

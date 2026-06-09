@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import cl.duoc.msArriendo3.dto.EmpleadoDTO;
 
-@FeignClient(name = "msEmpleado", url = "http://localhost:8082")
+@FeignClient(name = "msEmpleado")
 public interface EmpleadoClient {
 
     @GetMapping("api/v1/empleado/dto/{id}")
