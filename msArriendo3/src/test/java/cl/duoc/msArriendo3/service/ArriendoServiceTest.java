@@ -43,7 +43,9 @@ public class ArriendoServiceTest {
         //ACT
         Arriendo resultado = arriendoService.buscarPorId(1);
         //ASSERT
-        
+        assertEquals(1, resultado.getId());
+        assertEquals("19-06-2026", resultado.getFechaInicio());
+        assertEquals("26-06-2026", resultado.getFechaFin());
     }
 
 }
