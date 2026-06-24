@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ArriendoDTO {
 
+    
     private Integer id;
     private String fechaInicio;
     private String fechaFin;

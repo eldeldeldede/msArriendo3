@@ -17,9 +17,11 @@ import cl.duoc.msArriendo3.dto.ArriendoDTO;
 import cl.duoc.msArriendo3.model.Arriendo;
 import cl.duoc.msArriendo3.service.ArriendoService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("api/v1/arriendo")
+@Tag(name = "Arriendo", description = "Operaciones relacionadas con los arriendos")
 public class ArriendoController {
 
     @Autowired
