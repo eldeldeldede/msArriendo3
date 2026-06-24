@@ -18,6 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "arriendo")
+@Schema(description = "Entidad que representa un arriendo")
 public class Arriendo {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
