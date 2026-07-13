@@ -67,8 +67,6 @@ public class ArriendoService {
         arriendoCompleto.setId(arriendo.getId());
         arriendoCompleto.setFechaInicio(arriendo.getFechaInicio().toString());
         arriendoCompleto.setFechaFin(arriendo.getFechaFin().toString());
-        arriendoCompleto.setReserva(reserva);
-        arriendoCompleto.setEmpleado(empleado);
 
         return arriendoCompleto;
     }

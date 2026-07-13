@@ -13,7 +13,4 @@ public class ArriendoDTO {
     private Integer id;
     private String fechaInicio;
     private String fechaFin;
-
-    private EmpleadoDTO empleado;
-    private ReservaDTO reserva;
 }

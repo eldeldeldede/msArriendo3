@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ReservaDTO {
 
-    Integer id;
+    private Integer id;
     private ClienteDTO cliente;
 }

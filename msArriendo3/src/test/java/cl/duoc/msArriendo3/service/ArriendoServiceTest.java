@@ -220,7 +220,5 @@ public class ArriendoServiceTest {
         assertEquals(1, resultado.getId());
         assertEquals(fechaInicio.toString(), resultado.getFechaInicio());
         assertEquals(fechaFin.toString(), resultado.getFechaFin());
-        assertNotNull(resultado.getReserva());
-        assertNotNull(resultado.getEmpleado());
     }
 }
